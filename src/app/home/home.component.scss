@@ -1,0 +1,32 @@
+
+  body {
+    background-image: url("https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Ireland/West%20Coast%20Ireland/West-Coast-ireland-overview-cliffs-of-moher.jpg?imwidth=1400");
+    background-color: #00000062;
+    background-size: auto;
+   }
+   .weatherImage{
+     z-index: 1;
+     background-image: url("https://dv-website.s3.amazonaws.com/uploads/2019/05/jz_csweather_060619.jpg")
+   }
+   .storeImage{
+     z-index: 1;
+     background-image: url("https://www.pennlive.com/resizer/6XIyWXqHs48v8p0bhe1UFz5rUoY=/450x0/smart/arc-anglerfish-arc2-prod-advancelocal.s3.amazonaws.com/public/ELBFECKDMNGRXGGIMDFLUFT3CU.jpg");
+   }
+   .text-center{
+       text-align: center;
+   }
+
+   .medBox{
+     height: 250px;
+     width: 250px;
+     border-radius: 50%;
+     float: right;
+     border: 2px solid white;
+     color: white;
+     text-align: center;
+     margin-top: 40px;
+     vertical-align: middle;
+     font-size: large;
+     font-weight: 700;
+     text-shadow: 2px 2px black;
+   }
