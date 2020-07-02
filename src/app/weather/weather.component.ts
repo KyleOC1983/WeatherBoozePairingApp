@@ -17,7 +17,7 @@ export class WeatherComponent implements OnInit {
   
 
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   
 
