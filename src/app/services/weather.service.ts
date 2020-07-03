@@ -14,10 +14,8 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
   
 
-  getWeather() : Observable<Response>{
-    let submit: number;
-    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${submit},us&appid=a904c2386a3e6d8c697e629baf45aa7e`).pipe(
+  getWeather(submit: number) : Observable<Response>{
+      return this.http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${submit},us&appid=a904c2386a3e6d8c697e629baf45aa7e`).pipe(
       map((res: Response) => res)
-    );
-  }
+  )}
 }
