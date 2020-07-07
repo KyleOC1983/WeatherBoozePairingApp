@@ -1,4 +1,32 @@
-.centerAlign {
+
+.inputButton{
+  text-align: center;
+  margin: 10px;
+}
+
+
+.weatherBox{
+  text-align: center;
+  background-color: #69F0AE;
+  width: 230px;
+  height: 260px;
   margin: auto;
-  display: block;
+  font-size: large;
+}
+
+.textBox{
+  text-align: center;
+  background-color: #69F0AE;
+  width: 230px;
+  height: 100px;
+  margin: auto;
+  font-size: large;
+}
+
+body{
+  background-color: #7B1FA2;
+  color: white;
+  background-image: url('https://openweathermap.org/themes/openweathermap/assets/img/shutterstock_298797602_1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -6,6 +6,7 @@ import { WeatherService } from '../services/weather.service';
 import { Weather } from './interfaces/weather.interface';
 import { Sys } from './interfaces/sys.interfaces'
 import { Main } from './interfaces/main.interfaces'
+import { FormControl, Validators } from '@angular/forms';
 
 export interface Transaction {}
 
@@ -16,6 +17,14 @@ export interface Transaction {}
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
+  email = new FormControl('', [Validators.required, Validators.email]);
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
 
   submit: number;
   weather: Array<Weather>;

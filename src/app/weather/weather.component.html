@@ -1,13 +1,45 @@
-<input [(ngModel)]="submit" type="text" class="centerAlign">
-<button (click)="search()" class="centerAlign">Zip Code </button>
+<div class="example-container textCenter inputButton">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
 
-<ng-container *ngIf="weather">
-        <p *ngFor="let w of weather">{{w.description | titlecase}}</p>
-        <p>{{main.temp}}</p>
-        <p>{{main.feels_like}}</p>
-        <p>{{main.temp_min}}</p>
-        <p>{{main.temp_max}}</p>
-        <p>{{sys.sunrise | date: 'shortTime' : '-600'}}</p>
-        <p>{{sys.sunset | date: 'shortTime' : '-6000'}}</p>
+
+<ng-container *ngIf="email.valid">
+<div class="inputButton textCenter">
+<input [(ngModel)]="submit" type="text"  minlength="5" maxlength="5">
+<button (click)="search()" >Zip Code </button>
+</div>
+<body>
     
+    <div *ngIf="!weather" class="textBox"><br>Enter Zip Code<br><br>For Current Weather
+        
+    </div>
+<ng-container *ngIf="weather">
+    <div class="weatherBox"><br>
+        <p *ngFor="let w of weather">{{w.description | titlecase}}</p>
+        <p>Temperature: {{((main.temp -271.15) * 9/5 + 32) | number: '0.0-0'}}°F</p>
+        <p>Feels Like: {{((main.feels_like -271.15) * 9/5 + 32 | number: '0.0-0')}}°F</p>
+        <p>Today's Low: {{((main.temp_min -271.15) * 9/5 + 32 | number: '0.0-0')}}°F</p>
+        <p>Today's High: {{((main.temp_max -271.15) * 9/5 + 32 | number: '0.0-0')}}°F</p>
+        <p>Sunrise: {{sys.sunrise | date: 'shortTime'}}</p>
+        <p>Sunset: {{sys.sunset | date: 'shortTime'}}</p>
+    </div>
 </ng-container>
+</body>
+</ng-container>
+<body *ngIf="email.invalid" >
+<div class="emptyBox">
+<div class="weatherBox"><br>
+    <p>Email Address Required In Order to View Current Weather by Zip Code</p>
+    
+</div>
+</div>
+</body>
+
+    
+
+
+

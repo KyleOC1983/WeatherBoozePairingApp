@@ -13,7 +13,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DemoMaterialModule } from './material-module';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     WeatherComponent,
-    StoreComponent
+    StoreComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule    
+    FormsModule,
+    DemoMaterialModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
