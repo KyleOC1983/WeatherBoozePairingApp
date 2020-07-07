@@ -15,6 +15,7 @@ export class WeatherService {
   
 
   getWeather(submit: number) : Observable<Response>{
+    console.log(submit)
       return this.http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${submit},us&appid=a904c2386a3e6d8c697e629baf45aa7e`).pipe(
       map((res: Response) => res)
   )}

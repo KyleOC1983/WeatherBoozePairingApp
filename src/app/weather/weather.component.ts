@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import { WeatherService } from '../services/weather.service';
 import { Weather } from './interfaces/weather.interface';
 import { Sys } from './interfaces/sys.interfaces'
+import { Main } from './interfaces/main.interfaces'
 
 export interface Transaction {}
 
@@ -18,14 +19,18 @@ export class WeatherComponent implements OnInit {
 
   submit: number;
   weather: Array<Weather>;
-  sys: Array<Sys>;
+  sys: Sys;
+  main: Main;
   
 
   constructor(private weatherService: WeatherService) { }
 
   search(){
-    this.weatherService.getWeather(this.submit).subscribe((res: Response)=>{
-      this.weather = res.weather;
+    this.weatherService.getWeather(this.submit).subscribe((res: Object)=>{
+      this.weather = res["weather"];
+      this.main = res["main"];
+      this.sys = res["sys"];
+      
     })
   }
 

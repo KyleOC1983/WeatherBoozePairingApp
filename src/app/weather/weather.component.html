@@ -1,1 +1,13 @@
-<input [(ngModel)]="submit" type="number">
+<input [(ngModel)]="submit" type="text" class="centerAlign">
+<button (click)="search()" class="centerAlign">Zip Code </button>
+
+<ng-container *ngIf="weather">
+        <p *ngFor="let w of weather">{{w.description | titlecase}}</p>
+        <p>{{main.temp}}</p>
+        <p>{{main.feels_like}}</p>
+        <p>{{main.temp_min}}</p>
+        <p>{{main.temp_max}}</p>
+        <p>{{sys.sunrise | date: 'shortTime' : '-600'}}</p>
+        <p>{{sys.sunset | date: 'shortTime' : '-6000'}}</p>
+    
+</ng-container>
