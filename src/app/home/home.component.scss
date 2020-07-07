@@ -15,7 +15,9 @@
    .text-center{
        text-align: center;
    }
-
+   .marginright{
+     margin-right: 40px;
+   }
    .medBox{
      height: 250px;
      width: 250px;
@@ -30,3 +32,11 @@
      font-weight: 700;
      text-shadow: 2px 2px black;
    }
+   #links:hover{
+    -ms-transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+    transform: scale(1.1,1.1);
+    box-shadow: 10px 10px rgb(56, 56, 56);
+    transition: all 1s linear 500ms;
+    
+    }
