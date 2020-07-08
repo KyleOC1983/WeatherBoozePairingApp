@@ -3,7 +3,22 @@
   text-align: center;
   margin: 10px;
 }
-
+.parentcontainer{
+  height: 200px;
+  position: relative;
+  
+}
+.star{
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.star:hover{
+  cursor:pointer;
+}
 
 .weatherBox{
   text-align: center;

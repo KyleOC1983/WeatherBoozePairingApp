@@ -38,7 +38,8 @@ import { DemoMaterialModule } from './material-module';
     HttpClientModule,
     FormsModule,
     DemoMaterialModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

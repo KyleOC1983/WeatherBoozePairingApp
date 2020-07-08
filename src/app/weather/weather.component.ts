@@ -8,6 +8,7 @@ import { Sys } from './interfaces/sys.interfaces'
 import { Main } from './interfaces/main.interfaces'
 import { FormControl, Validators } from '@angular/forms';
 import { UserStoreService } from '../user-store.service';
+import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
 
 export interface Transaction {}
 
@@ -15,7 +16,9 @@ export interface Transaction {}
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.scss']
+  styleUrls: ['./weather.component.scss'],
+  animations: [fadeInOnEnterAnimation({anchor: 'enter', duration: 10000, delay: 200}), 
+  fadeOutOnLeaveAnimation({ anchor: 'leave', duration: 500, delay: 200})]
 })
 export class WeatherComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);

@@ -7,17 +7,17 @@
   </div>
 
 
-<ng-container *ngIf="email.valid">
+<ng-container *ngIf="email.valid" >
 <div class="inputButton textCenter">
 <input [(ngModel)]="submit" type="text"  minlength="5" maxlength="5">
 <button (click)="search(); addUserEmail()" >Zip Code </button>
 </div>
 <body>
     
-    <div *ngIf="!weather" class="textBox"><br>Enter Zip Code<br><br>For Current Weather
+    <div *ngIf="!weather"class="textBox"><br>Enter Zip Code<br><br>For Current Weather
         
     </div>
-<ng-container *ngIf="weather">
+<ng-container *ngIf="weather" >
     <div class="weatherBox"><br>
         <p *ngFor="let w of weather">{{w.description | titlecase}}</p>
         <p>Temperature: {{((main.temp -271.15) * 9/5 + 32) | number: '0.0-0'}}°F</p>
@@ -27,12 +27,15 @@
         <p>Sunrise: {{sys.sunrise | date: 'shortTime'}}</p>
         <p>Sunset: {{sys.sunset | date: 'shortTime'}}</p>
     </div>
+    <div class="parentcontainer">
+    <mat-icon class="star" routerLink="/store">stars</mat-icon>
+    </div>
 </ng-container>
 </body>
 </ng-container>
 <body *ngIf="email.invalid" >
 <div class="emptyBox">
-<div class="weatherBox"><br>
+<div class="textBox"><br>
     <p>Email Address Required In Order to View Current Weather by Zip Code</p>
     
 </div>
