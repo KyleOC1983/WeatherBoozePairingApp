@@ -46,7 +46,7 @@ export class WeatherComponent implements OnInit {
   }
   addUserEmail(){
     this.userStoreService.addUserEmail(this.userEmail);
-    console.log(this.userEmail);
+    console.log(this.userEmail)
   }
   
 
