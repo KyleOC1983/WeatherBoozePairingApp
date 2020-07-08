@@ -8,6 +8,7 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class StoreComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
+ 
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';

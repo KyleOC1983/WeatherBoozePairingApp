@@ -10,7 +10,7 @@
 <ng-container *ngIf="email.valid">
 <div class="inputButton textCenter">
 <input [(ngModel)]="submit" type="text"  minlength="5" maxlength="5">
-<button (click)="search()" >Zip Code </button>
+<button (click)="search(); addUserEmail()" >Zip Code </button>
 </div>
 <body>
     
